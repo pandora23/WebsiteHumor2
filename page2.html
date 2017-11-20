@@ -1,0 +1,178 @@
+<html>
+<head>
+ <link href='/static/style.css' rel='stylesheet'>
+ <link href='/static/bootstrap.css' rel='stylesheet'>
+ <script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+ <script src="/static/App3.js" type="text/javascript"></script>
+
+</head>
+<body>
+
+<!--replace with clickable menus-->
+<div class="navBar">
+
+    <ul class="nav nav-tabs">
+	  <li><a href="#">Paper</a></li>
+	  <li><a href="#">Visualizations</a></li>
+	  <li class="active"><a href="#">Experiment Online</a></li>
+	</ul>
+
+</div>
+
+<!--splash jumbotron-->
+<div class="jumbotron">
+	<div class="container">
+        <h1>Experiment Online.</h1>
+        <p>Fill out this web form to run your own experiments.*change*</p>
+     </div>
+</div>
+
+
+<!--container for input forms-->
+<div class="row">
+	<div class="col-md-2">
+		<div class="inputForm">
+			<form>
+				Part One
+				<div class="form-group">
+					<textarea class="form1" rows="2">A fish in a tank.</textarea>
+				</div>
+				Part Two
+				<div class="form-group">
+					<textarea class="form2" rows="2">Drives the tank.</textarea>
+				</div>
+				Meaning X Search Query
+				<div class="form-group">
+					<textarea class="form3" rows="2">Aquarium tank</textarea>
+				</div>
+				Meaning Y Search Query
+				<div class="form-group">
+					<textarea class="form4" rows="2">Vehicle tank</textarea>
+				</div>
+				Ambiguous Word
+				<div class="form-group">
+					<textarea class="form5" rows="1">tank</textarea>
+				</div>
+				Co-Occurence Distance
+				<div class="form-group">
+					<textarea class="formD" rows="1">4</textarea>
+				</div>
+				N-gram length
+				<div class="form-group">
+					<textarea class="formE" id="nglenform" rows="1">1</textarea>
+				</div>
+				Number of websites
+				<div class="form-group">
+					<textarea class="formF" rows="1">5</textarea>
+				</div>
+				Number of frequencies to use
+				<div class="form-group">
+					<textarea class="formG" rows="1">100</textarea>
+				</div>
+				<script>
+				//$("#nglenform").attr("disabled", "disabled");
+				</script>
+				
+				
+			</form>
+			<button id="runButton" onClick=runExperiment()>Run Experiment</button>
+			<button onCLick=clearData()>New</button>
+		</div>
+		<div class="inputForm">Set Color:
+			<form class="classform">
+			<input type="radio" name="class" value="Joke">Joke<br>
+			<input type="radio" name="class" value="Non Joke">NonJoke<br>
+			<input type="radio" name="class" value="Unknown">Unknown<br>
+			</form>
+		</div>
+		<div class="inputForm">Include ambiguous word in frequencies or only look at context:
+			<form class="classform">
+			<input type="radio" name="include" value="Include">include<br>
+			<input type="radio" name="include" value="NoInclude">context only<br>
+			</form>
+		</div>
+	</div>
+	<div class="col-md-3" id="box2">
+		<h4>Correlation scores and CPC visualization:</h4>
+		<h5>Correlation between A given P1 and M1:</h5><h5 id="c1x"></h5>
+		<h5>Correlation between A given P1 and M2:</h5><h5 id="c1y"></h5>
+		<h5>Correlation between A given P2 and M1:</h5><h5 id="c2x"></h5>
+		<h5>Correlation between A given P2 and M2:</h5><h5 id="c2y"></h5>
+		<canvas id="canvas1" width="400" height="400"></canvas>
+	</div>
+	<div class="col-md-2">
+		<h3>Search Results: </h3><h3 class="currentPart"></h3>
+		<ul class="resultsListP1">
+		</ul>
+	</div> 
+	<div class="col-md-3" name="textsBox" id="box3">
+		<h3>Grabbing Co-Occurence Data for:</h3><h3 class="currentPart"></h3>
+		<ul class="allTextP1">
+		</ul>
+	</div>
+	
+</div>
+
+
+<!--Semantics Established window-->
+
+
+
+<!-- <div class="container4" id ="box4">P2 sites.
+		<ul class="resultsListP2>
+			<li>zzz</li>
+		</ul>
+	</div>
+	<div class="container4" id ="box4">Mx sites.
+		<ul class="resultsListP3>
+			<li>zzz</li>
+		</ul>
+	</div>
+	<div class="container4" id ="box4">My sites.
+		<ul class="resultsListP4>
+			<li>zzz</li>
+		</ul>
+	</div>
+	 -->
+<!--window showing sites currently processing-->
+<!--div class="websitesPanel">Search hits:-->
+
+
+<div class="container" id="freqPane">
+	<div class="row">
+		<h2>Top Frequencies:</h2>
+	<div>
+	<div class="row">
+		<h3 class="Freq1">waiting for input</h3>
+		<div class="FrequencyList1">
+			<h3 class="Freq1List">not calculated</h3>
+		</div>
+	<div>
+	<div class="row">
+		<h3 class="Freq2">waiting for input</h3>
+	<h3 class="Freq2List"></h3>
+	</div>
+	<div class="row">
+		<h3 class="Freq3">waiting for input</h3>
+		<h3 class="Freq3List"></h3>
+	</div>
+	<div class="row">
+		<h3 class="Freq4">waiting for input</h3>
+		<h3 class="Freq4List"></h3>
+	</div>
+</div>
+	
+			
+
+
+<!--printoutalltext-->
+
+
+	
+<!--test draw for now, put in own module-->
+
+
+
+</body>
+
+</html>
